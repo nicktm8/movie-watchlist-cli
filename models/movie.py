@@ -11,5 +11,5 @@ class Movie:
             f'Title: {self.title}\n'
             f'Year:  {self.release_year}\n'
             f'Genre: {self.genre}\n'
-            f'IMDB:  {self.imdb_url}'
+            f'IMDb:  {self.imdb_url}'
         )
