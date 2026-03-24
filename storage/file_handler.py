@@ -7,6 +7,7 @@ class FileHandler:
         self.file_path = 'data/library.pkl'
         
     def file_save(self, movies):
+        os.makedirs('data', exist_ok=True)
         with open(self.file_path, 'wb') as file:
             pickle.dump(movies, file)
     
