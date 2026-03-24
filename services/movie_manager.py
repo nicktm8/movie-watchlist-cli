@@ -36,7 +36,9 @@ class MovieManager:
         return True
             
     def remove_movie(self):
-        self.load_all_movies()
+        if not self.load_all_movies():
+            return
+        
         index = input("\nEnter the movie number you want to delete?\n")
         index = int(index) - 1
         if (0 <= index) and (index < len(self.movies)):
