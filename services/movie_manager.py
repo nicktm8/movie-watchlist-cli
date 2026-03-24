@@ -26,13 +26,15 @@ class MovieManager:
     def load_all_movies(self):
         if(len(self.movies) == 0):
             print('\nNo movies.\n')
-        else:
-            print("\nAll movies in the watchlist:\n")
+            return False
+        
+        print("\nAll movies in the watchlist:\n")
                 
-            for index in range(len(self.movies)):
-                print(f"{index+1}.{self.movies[index]}")
-                print("--------")
-                
+        for index in range(len(self.movies)):
+            print(f"{index+1}.{self.movies[index]}")
+            print("--------")
+        return True
+            
     def remove_movie(self):
         self.load_all_movies()
         index = input("\nEnter the movie number you want to delete?\n")
