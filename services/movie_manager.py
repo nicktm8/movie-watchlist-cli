@@ -8,11 +8,11 @@ class MovieManager:
         self.movies = self.file_handler.file_load()
     
     def add_movie(self):
-        movie_title = input("Movie title:")
-        movie_release_year = input("Movie release year:")
+        movie_title = input("\nMovie title: ")
+        movie_release_year = input("Movie release year: ")
         movie_release_year = int(movie_release_year)
-        movie_genre = input("Movie genre:")
-        movie_IMDb = input("Movie IMDb URL:")
+        movie_genre = input("Movie genre: ")
+        movie_IMDb = input("Movie IMDb URL: ")
         
         
         movie = Movie(movie_title, movie_release_year, movie_genre, movie_IMDb)
@@ -27,12 +27,12 @@ class MovieManager:
         if(len(self.movies) == 0):
             print('\nNo movies.\n')
         else:
-            print("\nAll movies in the watchlist:")
+            print("\nAll movies in the watchlist:\n")
                 
-            for movie in self.movies:
-                print(movie)
+            for index in range(len(self.movies)):
+                print(f"{index+1}.{self.movies[index]}")
                 print("--------")
-    
+                
     def remove_movie(self):
         self.load_all_movies()
         index = input("\nEnter the movie number you want to delete?\n")
